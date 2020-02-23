@@ -1,0 +1,20 @@
+<#
+In Power Shell as administrator, run the following lines to uninstall various unwanted applications.
+#>
+
+Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
+
+get-appxpackage -allusers *xboxapp* | Remove-AppxPackage
+get-appxprovisionedpackage –online | where-object {$_.packagename –like “*xboxapp*”} | remove-appxprovisionedpackage –online
+get-appxpackage -allusers *xboxapp* | Remove-AppxPackage
+get-appxprovisionedpackage –online | where-object {$_.packagename –like “*xboxapp*”} | remove-appxprovisionedpackage –online 
+Get-AppxPackage Microsoft.Microsoft3DViewer | Remove-AppxPackage
+
+Get-AppxPackage *3dbuilder* | Remove-AppxPackage 
+Get-AppxPackage Microsoft.Microsoft3DViewer | Remove-AppxPackage
+
+Get-AppxPackage *windowscamera* | Remove-AppxPackage
+
+Get-AppxPackage *windowsmaps* | Remove-AppxPackage
+
+Get-AppxPackage *people* | Remove-AppxPackage
